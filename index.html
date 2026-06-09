@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Délices Afnan | عالم الحلويات الفاخرة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="deliceafnan.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="logoodelice.jpg" alt="Délices Afnan" class="brand-logo">
+            <nav>
+                <a href="#services">خدماتنا</a>
+                <a href="#order">طلب مسبق</a>
+            </nav>
+            <div class="social-header-links">
+                <a href="https://web.facebook.com/afnan.delices" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/delices_afnane/" target="_blank" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=213795818828" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="experience-badge">✨ أكثر من 5 سنوات من الخبرة والإتقان</span>
+        <h1>حلويات متميزة لكل مناسباتكم السعيدة ✨</h1>
+        <p>نصنع لكم أرقى كعكات الباتيسري المخصصة كلياً حسب رغباتكم بأشكال ساحرة ومذاق فاخر يسعد ضيوفكم.</p>
+        
+        <div class="btn-wrap" style="max-width: 350px; margin: 0 auto;">
+            <a href="#order" class="cta-btn-modern">
+                <span>صمّم واطلب كعكتك الآن</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">إبداعات وخدمات رائدتنا</h2>
+        <div class="grid-services">
+            <div class="service-card">
+                <img src="cake2.png" class="service-img" alt="كعكات المناسبات">
+                <div class="service-info">
+                    <h3>كعكات المناسبات والخطوبة</h3>
+                    <p>كعكات فخمة ومبهرة للأعراس، حفلات الختان، وأعياد الميلاد بتفاصيل دقيقة ومبهرة.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="smallcakes.png" class="service-img" alt="حلويات وباتيسري">
+                <div class="service-info">
+                    <h3>كعكات فواكه مقرمشة</h3>
+                    <p>تشكيلة ممتازة من تارت الفواكه الطازجة، لير كيك، الماكرون الملون والمقرمش، وحلويات البوفيه.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="cake1.png" class="service-img" alt="بوفيه متكامل">
+                <div class="service-info">
+                    <h3>باتسري ذات شكل طبيعي وجمالية</h3>
+                    <p>إعداد قوائم كاملة وحلويات صغيرة (Miniatures) منسقة بدقة لتجعل مناسبتكم لوحة فنية متكاملة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-section" id="order">
+        <div class="order-container">
+            <h2 class="section-title" style="margin-bottom: 20px;">استمارة التخصيص المسبق للكعكة</h2>
+            <p style="text-align: center; margin-bottom: 35px; color: var(--dark-text)">قم بتخصيص كعكتك المفضلة وسيقوم النظام بتوجيهك لإرسالها مباشرة عبر Messenger الخاص بـ Délices Afnan.</p>
+            
+            <form id="cakeOrderForm">
+                
+                <div class="row-grid">
+                    <div class="form-group">
+                        <label for="customerName">الاسم الكامل:</label>
+                        <input type="text" id="customerName" class="form-control" placeholder="أدخل اسمك الكريم" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">رقم الهاتف:</label>
+                        <input type="tel" id="customerPhone" class="form-control" placeholder="0X XX XX XX XX" required>
+                    </div>
+                </div>
+
+                <div class="row-grid">
+                    <div class="form-group">
+                        <label for="cakeShape">شكل الكعكة المبدئي:</label>
+                        <select id="cakeShape" class="form-control">
+                            <option value="دائري كلاسيكي">دائري كلاسيكي</option>
+                            <option value="مربع مودرن">مربع مودرن</option>
+                            <option value="قلب رومانسي">قلب رومانسي</option>
+                            <option value="طوابق متعددة">طوابق متعددة فخمة</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cakeColor">الألوان والثيم المطلوب:</label>
+                        <input type="text" id="cakeColor" class="form-control" placeholder="مثال: وردي وأبيض مع ثيم عيد ميلاد">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>طريقة تحديد حجم الكعكة وسعتها:</label>
+                    <div class="size-type-container">
+                        <div id="btnDimensions" class="radio-box active">بالأبعاد الدقيقة (سم)</div>
+                        <div id="btnGuests" class="radio-box">بعدد الضيوف والقطع</div>
+                    </div>
+                </div>
+
+                <div id="dimensionsSection" class="dynamic-size-section" style="display: block;">
+                    <div class="row-grid">
+                        <div class="form-group">
+                            <label for="cakeLength">الطول (سم):</label>
+                            <input type="number" id="cakeLength" class="form-control" value="20" min="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="cakeWidth">العرض / القطر (سم):</label>
+                            <input type="number" id="cakeWidth" class="form-control" value="20" min="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cakeHeight">الارتفاع المفضل:</label>
+                        <select id="cakeHeight" class="form-control">
+                            <option value="طبقة واحدة">طبقة واحدة (ستاندرد)</option>
+                            <option value="طبقتين مرتفعة">طبقتين مرتفعة (Tall Cake)</option>
+                            <option value="3 طبقات فخمة">3 طبقات فخمة للمناسبات الكبيرة</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="guestsSection" class="dynamic-size-section" style="display: none;">
+                    <div class="row-grid">
+                        <div class="form-group">
+                            <label for="guestsCount">عدد الضيوف المتوقع:</label>
+                            <input type="number" id="guestsCount" class="form-control" value="15" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="slicesCount">عدد قطع التتقطيع المطلوبة:</label>
+                            <input type="number" id="slicesCount" class="form-control" value="15" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 20px;">
+                    <label for="cakeNotes">ملاحظات أو طلبات خاصة للحشو والكتابة:</label>
+                    <textarea id="cakeNotes" class="form-control" rows="3" placeholder="اكتب هنا أي تفاصيل تريد مشاركتها (كتابة اسم معين، نوع الحشو، إلخ)..."></textarea>
+                </div>
+
+                <div class="live-summary">
+                    <strong>ملخص طلب كعكتك الحالية:</strong> 
+                    كعكة <span id="sumShape" style="font-weight: bold; color: #a334ff;">دائري كلاسيكي</span>، 
+                    مخصصة بلون وثيم <span id="sumColor" style="font-weight: bold; color: #a334ff;">حسب اختيارك الموضح</span>، 
+                    والمقاس: <span id="sumSize" style="font-weight: bold; color: #a334ff;">أبعادها 20×20 سم (طبقة واحدة)</span>.
+                </div>
+
+                <div class="btn-wrap-messenger">
+                    <button type="submit" class="messenger-btn-modern">
+                        <span>💬 إرسال تفاصيل التخصيص والطلب عبر Messenger</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h3 style="color: var(--primary-pink); margin-bottom: 15px;">Délices Afnan</h3>
+            <p style="margin-bottom: 20px;">نصنع حلوياتكم بكل حب وإتقان لمناسباتكم السعيدة</p>
+            
+            <div class="footer-social-icons">
+                <a href="https://web.facebook.com/afnan.delices" target="_blank" class="icon-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://www.instagram.com/delices_afnane/" target="_blank" class="icon-ig"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://api.whatsapp.com/send?phone=213795818828" target="_blank" class="icon-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 25px 0;">
+<p style="font-size: 0.9rem; opacity: 0.7;">© 2020 - 2026 جميع الحقوق محفوظة لـ Délices Afnan | تم التطوير بواسطة Mouzx.dvtools</p>        </div>
+    </footer>
+
+    <script src="deliceafnan.js"></script>
+</body>
+</html>

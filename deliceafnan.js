@@ -96,7 +96,10 @@ if (formElement) {
             sizeInfo = `👥 الحجم: مناسب لـ ${document.getElementById('guestsCount')?.value || '0'} ضيف (القطع المطلوبة: ${document.getElementById('slicesCount')?.value || '0'} قطعة)`;
         }
 
-        const messengerUrl = "https://m.me/afnan.delices"; 
+       // نظام ذكي للتحقق إذا كان الزبون يتصفح من الهاتف أو الكمبيوتر
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+// إذا كان هاتف يفتح رابط التطبيق المباشر، وإذا كان كمبيوتر يفتح رابط الويب القياسي
+const messengerUrl = isMobile ? "fb-messenger://user/afnan.delices" : "https://m.me/afnan.delices";
         const formspreeApiUrl = 'https://formspree.io/f/mrevqdpw';
 
         fetch(formspreeApiUrl, {

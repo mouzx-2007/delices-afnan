@@ -40,13 +40,13 @@ function updateSummary() {
     const isDimensions = dimensionsSection && dimensionsSection.style.display === 'block';
     
     if (isDimensions) {
-        const length = document.getElementById('cakeLength')?.value || '20';
-        const width = document.getElementById('cakeWidth')?.value || '20';
+        const length = document.getElementById('cakeLength')?.value || '0';
+        const width = document.getElementById('cakeWidth')?.value || '0';
         const height = document.getElementById('cakeHeight')?.value || 'طبقة واحدة';
         sizeText = `أبعادها ${length}×${width} سم (${height})`;
     } else {
-        const guests = document.getElementById('guestsCount')?.value || '15';
-        const slices = document.getElementById('slicesCount')?.value || '15';
+        const guests = document.getElementById('guestsCount')?.value || '0';
+        const slices = document.getElementById('slicesCount')?.value || '0';
         sizeText = `تكفي لـ ${guests} ضيف (مجهزة لـ ${slices} قطعة أكل)`;
     }
 
@@ -63,6 +63,7 @@ function safeAddListener(id, event, callback) {
     }
 }
 
+// ربط عناصر الإدخال لتحديث الملخص تلقائياً
 safeAddListener('cakeShape', 'change', updateSummary);
 safeAddListener('cakeColor', 'input', updateSummary);
 safeAddListener('cakeLength', 'input', updateSummary);
@@ -90,9 +91,9 @@ if (formElement) {
         const isDimensions = dimensionsSection && dimensionsSection.style.display === 'block';
         
         if (isDimensions) {
-            sizeInfo = `📐 الأبعاد: الطول ${document.getElementById('cakeLength')?.value || '20'}سم × العرض ${document.getElementById('cakeWidth')?.value || '20'}سم (${document.getElementById('cakeHeight')?.value || 'طبقة واحدة'})`;
+            sizeInfo = `📐 الأبعاد: الطول ${document.getElementById('cakeLength')?.value || '0'}سم × العرض ${document.getElementById('cakeWidth')?.value || '0'}سم (${document.getElementById('cakeHeight')?.value || 'طبقة واحدة'})`;
         } else {
-            sizeInfo = `👥 الحجم: مناسب لـ ${document.getElementById('guestsCount')?.value || '15'} ضيف (القطع المطلوبة: ${document.getElementById('slicesCount')?.value || '15'} قطعة)`;
+            sizeInfo = `👥 الحجم: مناسب لـ ${document.getElementById('guestsCount')?.value || '0'} ضيف (القطع المطلوبة: ${document.getElementById('slicesCount')?.value || '0'} قطعة)`;
         }
 
         const messengerUrl = "https://m.me/afnan.delices"; 

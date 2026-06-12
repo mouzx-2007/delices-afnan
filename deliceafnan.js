@@ -25,15 +25,22 @@ if (btnDimensions && btnGuests && dimensionsSection && guestsSection) {
 }
 
 // ==========================================
-// 2️⃣ دالة التحديث الحي لملخص المواصفات (المطورة والآمنة)
+// 2️⃣ دالة التحديث الحي لملخص المواصفات (المطورة والمصلحة 100%)
 // ==========================================
 function updateSummary() {
     const sumShapeEl = document.getElementById('sumShape');
     const sumColorEl = document.getElementById('sumColor');
     const sumSizeEl = document.getElementById('sumSize');
+    
+    // جلب معرفات عناصر عرض التاريخ والوقت الجديدة المصلحة في الـ HTML
+    const sumDateEl = document.getElementById('sumDate');
+    const sumTimeEl = document.getElementById('sumTime');
 
+    // جلب القيم الحالية من خانات الإدخال
     const cakeShape = document.getElementById('cakeShape')?.value || 'دائري كلاسيكي';
     const cakeColor = document.getElementById('cakeColor')?.value || 'حسب اختيارك الموضح';
+    const dateValue = document.getElementById('dateInput')?.value || '[اختر التاريخ]';
+    const timeValue = document.getElementById('timeInput')?.value || '[اختر الوقت]';
     
     let sizeText = '';
     const dimensionsSection = document.getElementById('dimensionsSection');
@@ -50,9 +57,12 @@ function updateSummary() {
         sizeText = `تكفي لـ ${guests} ضيف (مجهزة لـ ${slices} قطعة أكل)`;
     }
 
+    // تحديث النصوص داخل الملخص الحي فوراً
     if (sumShapeEl) sumShapeEl.textContent = cakeShape;
-    if (sumColorEl) sumColorEl.textContent = cakeColor;
+    if (sumColorEl) sumColorEl.textContent = cakeColor.trim() !== '' ? cakeColor : 'حسب اختيارك الموضح';
     if (sumSizeEl) sumSizeEl.textContent = sizeText;
+    if (sumDateEl) sumDateEl.textContent = dateValue;
+    if (sumTimeEl) sumTimeEl.textContent = timeValue;
 }
 
 // دالة مساعدة لربط الأحداث بأمان دون التسبب في خطأ Null
@@ -63,7 +73,7 @@ function safeAddListener(id, event, callback) {
     }
 }
 
-// ربط عناصر الإدخال لتحديث الملخص تلقائياً
+// ربط جميع عناصر الإدخال القديمة والجديدة لتحديث الملخص تلقائياً عند أي تغيير
 safeAddListener('cakeShape', 'change', updateSummary);
 safeAddListener('cakeColor', 'input', updateSummary);
 safeAddListener('cakeLength', 'input', updateSummary);
@@ -72,8 +82,12 @@ safeAddListener('cakeHeight', 'change', updateSummary);
 safeAddListener('guestsCount', 'input', updateSummary);
 safeAddListener('slicesCount', 'input', updateSummary);
 
+// إضافة مستمعات الأحداث لخانات التاريخ والوقت ليعمل التحديث الحي لحظياً
+safeAddListener('dateInput', 'input', updateSummary);
+safeAddListener('timeInput', 'input', updateSummary);
+
 // ==========================================
-// 3️⃣ معالجة إرسال البيانات فوراً لـ Formspree و Messenger
+// 3️⃣ معالجة إرسال الفورم وحفظ البيانات وتوجيه المستخدم
 // ==========================================
 const formElement = document.getElementById('cakeOrderForm');
 if (formElement) {
@@ -85,6 +99,8 @@ if (formElement) {
         const shape = document.getElementById('cakeShape')?.value || 'دائري كلاسيكي';
         const color = document.getElementById('cakeColor')?.value || 'حسب ذوق الوالدة';
         const notes = document.getElementById('cakeNotes')?.value || 'لا توجد ملاحظات إضافية';
+        const dateValue = document.getElementById('dateInput')?.value || 'لم يحدد بعد';
+        const timeValue = document.getElementById('timeInput')?.value || 'لم يحدد بعد';
         
         let sizeInfo = '';
         const dimensionsSection = document.getElementById('dimensionsSection');
@@ -96,10 +112,7 @@ if (formElement) {
             sizeInfo = `👥 الحجم: مناسب لـ ${document.getElementById('guestsCount')?.value || '0'} ضيف (القطع المطلوبة: ${document.getElementById('slicesCount')?.value || '0'} قطعة)`;
         }
 
-       // نظام ذكي للتحقق إذا كان الزبون يتصفح من الهاتف أو الكمبيوتر
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-// إذا كان هاتف يفتح رابط التطبيق المباشر، وإذا كان كمبيوتر يفتح رابط الويب القياسي
-const messengerUrl = isMobile ? "fb-messenger://user/afnan.delices" : "https://m.me/afnan.delices";
+        const messengerUrl = "https://m.me/afnan.delices"; 
         const formspreeApiUrl = 'https://formspree.io/f/mrevqdpw';
 
         fetch(formspreeApiUrl, {
@@ -114,6 +127,8 @@ const messengerUrl = isMobile ? "fb-messenger://user/afnan.delices" : "https://m
                 "شكل الكعكة": shape,
                 "الألوان والثيم": color,
                 "المقاس والحجم": sizeInfo,
+                "تاريخ الاستلام": dateValue,
+                "وقت الاستلام": timeValue,
                 "ملاحظات الزبون": notes
             })
         })

@@ -16,11 +16,14 @@
                 <a href="#services">خدماتنا</a>
                 <a href="#order">طلب مسبق</a>
             </nav>
+            <div class="header-actions" style="display: flex; align-items: center; gap: 15px;"></div>
             <div class="social-header-links">
-                <a href="https://web.facebook.com/afnan.delices" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/delices_afnane/" target="_blank" title="إنستغرام"><i class="fab fa-instagram"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=213795818828" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://web.facebook.com/afnan.delices" rel="noopener noreferrer" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/delices_afnane/" rel="noopener noreferrer" target="_blank"rel="noopener noreferrer" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=213795818828" rel="noopener noreferrer" target="_blank"rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
             </div>
+            
+
         </div>
     </header>
 
@@ -138,18 +141,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="date of command">
+                    <label for="commandDate">تاريخ الطلب:</label>
+                    <input id="dateInput" type="date" id="commandDate" class="form-control">
+                    <label for="commandTime" style="margin-top: 15px;">الوقت المفضل للتوصيل أو الاستلام:</label>
+                    <input id="timeInput" type="time" id="commandTime" class="form-control" style="margin-top: 10px;">
+                </div>
 
                 <div class="form-group" style="margin-top: 20px;">
                     <label for="cakeNotes">ملاحظات أو طلبات خاصة للحشو والكتابة:</label>
-                    <textarea id="cakeNotes" class="form-control" rows="3" placeholder="اكتب هنا أي تفاصيل تريد مشاركتها (كتابة اسم معين، نوع الحشو، إلخ)..."></textarea>
+                    <textarea id="cakeNotes" class="form-control" rows="3" placeholder="اكتب هنا أي تفاصيل تريد مشاركتها (كتابة اسم معين， نوع الحشو， إلخ)..."></textarea>
                 </div>
 
-                <div class="live-summary">
-                    <strong>ملخص طلب كعكتك الحالية:</strong> 
-                    كعكة <span id="sumShape" style="font-weight: bold; color: #a334ff;">دائري كلاسيكي</span>، 
-                    مخصصة بلون وثيم <span id="sumColor" style="font-weight: bold; color: #a334ff;">حسب اختيارك الموضح</span>، 
-                    والمقاس: <span id="sumSize" style="font-weight: bold; color: #a334ff;">أبعادها 20×20 سم (طبقة واحدة)</span>.
-                </div>
+               <div class="live-summary">
+    <strong>ملخص طلب كعكتك الحالية:</strong> <br>
+    كعكة <span id="sumShape" style="font-weight: bold; color: #a334ff;">دائري كلاسيكي</span>، 
+    مخصصة بلون وثيم <span id="sumColor" style="font-weight: bold; color: #a334ff;">حسب اختيارك الموضح</span>، 
+    والمقاس: <span id="sumSize" style="font-weight: bold; color: #a334ff;">أبعادها 20×20 سم (طبقة واحدة)</span>.<br>
+    ليوم <span id="sumDate" style="font-weight: bold; color: #ff34b3;">[اختر التاريخ]</span>، 
+    على الساعة <span id="sumTime" style="font-weight: bold; color: #ff34b3;">[اختر الوقت]</span>.
+</div>
 
                 <div class="btn-wrap-messenger">
                     <button type="submit" class="messenger-btn-modern">
@@ -166,9 +177,9 @@
             <p style="margin-bottom: 20px;">نصنع حلوياتكم بكل حب وإتقان لمناسباتكم السعيدة</p>
             
             <div class="footer-social-icons">
-                <a href="https://web.facebook.com/afnan.delices" target="_blank" class="icon-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="https://www.instagram.com/delices_afnane/" target="_blank" class="icon-ig"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://api.whatsapp.com/send?phone=213795818828" target="_blank" class="icon-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://web.facebook.com/afnan.delices" target="_blank" rel="noopener noreferrer" class="icon-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://www.instagram.com/delices_afnane/" target="_blank"rel="noopener noreferrer" class="icon-ig"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://api.whatsapp.com/send?phone=213795818828" target="_blank" rel="noopener noreferrer" class="icon-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
             
             <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 25px 0;">
